@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /api/greenhouse
+  port: ${SERVER_PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:mariadb://${MARIADB_HOST:localhost}:${MARIADB_PORT:3306}/greenhouse_db?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: ${MARIADB_USER}
+    password: ${MARIADB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB102Dialect
+
+management:
+  endpoints:
+    web:
+      base-path: /manage
