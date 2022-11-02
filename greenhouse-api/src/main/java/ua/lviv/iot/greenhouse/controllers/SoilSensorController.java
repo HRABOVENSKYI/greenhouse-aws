@@ -1,6 +1,5 @@
 package ua.lviv.iot.greenhouse.controllers;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.greenhouse.dto.soil_sesnor.SoilSensorDTO;
@@ -16,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/sensors/soil-sensor")
 @RequiredArgsConstructor
-@XRayEnabled
 public class SoilSensorController {
 
     private final SoilSensorService soilSensorService;

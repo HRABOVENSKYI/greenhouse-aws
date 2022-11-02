@@ -1,6 +1,5 @@
 package ua.lviv.iot.greenhouse.controllers;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.greenhouse.dto.general_sensor.GeneralSensorDTO;
@@ -12,7 +11,6 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/sensors")
-@XRayEnabled
 public class GeneralSensorController {
 
     private final GeneralSensorService generalSensorService;

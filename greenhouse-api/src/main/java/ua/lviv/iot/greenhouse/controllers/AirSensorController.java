@@ -1,6 +1,6 @@
 package ua.lviv.iot.greenhouse.controllers;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.greenhouse.dto.air_sensor.AirSensorDTO;
@@ -16,7 +16,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/sensors/air-sensor")
 @RequiredArgsConstructor
-@XRayEnabled
 public class AirSensorController {
 
     private final AirSensorService airSensorService;

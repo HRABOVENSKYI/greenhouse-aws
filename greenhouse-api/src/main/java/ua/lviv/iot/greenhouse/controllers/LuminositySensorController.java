@@ -1,6 +1,5 @@
 package ua.lviv.iot.greenhouse.controllers;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.greenhouse.dto.luminosity_sensor.LuminositySensorDTO;
@@ -14,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/sensors/luminosity-sensor")
 @RequiredArgsConstructor
-@XRayEnabled
 public class LuminositySensorController {
 
     private final LuminositySensorService luminositySensorService;
