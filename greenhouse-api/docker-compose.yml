@@ -27,15 +27,6 @@ services:
     networks:
       - greenhouse-network
 
-  rabbitmq:
-    container_name: greenhouse-rabbitmq
-    image: rabbitmq:3.10-management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    networks:
-      - greenhouse-network
-
 networks:
   greenhouse-network:
     external: true
