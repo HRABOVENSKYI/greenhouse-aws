@@ -20,3 +20,15 @@ management:
   endpoints:
     web:
       base-path: /manage
+
+cloud:
+  aws:
+    region:
+      static: ${AWS_REGION}
+      auto: false
+    credentials:
+      access-key: ${AWS_ACCESS_KEY_ID}
+      secret-key: ${AWS_SECRET_ACCESS_KEY}
+    sqs:
+      uri: ${AMAZON_SQS_URL}
+      queue-name: ${QUEUE_NAME}

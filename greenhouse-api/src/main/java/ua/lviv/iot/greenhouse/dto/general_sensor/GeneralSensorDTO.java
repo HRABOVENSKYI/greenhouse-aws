@@ -1,5 +1,9 @@
 package ua.lviv.iot.greenhouse.dto.general_sensor;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -26,5 +30,7 @@ public class GeneralSensorDTO {
     private Double soilMoisture;
 
     @NotNull
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime time;
 }
