@@ -1,5 +1,6 @@
 package ua.lviv.iot.greenhouse.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.time.ZonedDateTime;
 
 @ControllerAdvice
+@Slf4j
 public class ApiExceptionHandler {
 
     @ExceptionHandler(value = {NoDataFoundException.class})
@@ -38,5 +40,20 @@ public class ApiExceptionHandler {
 
         // Return response entity
         return new ResponseEntity<>(apiException, badRequest);
+    }
+
+    @ExceptionHandler(value = {JwtAuthenticationException.class})
+    public ResponseEntity<Object> handleJwtAuthenticationException(JwtAuthenticationException e) {
+        // Create payload containing exception details
+        HttpStatus forbidden = HttpStatus.FORBIDDEN;
+
+        ApiException apiException = new ApiException(
+                e.getMessage(),
+                forbidden,
+                ZonedDateTime.now()
+        );
+
+        // Return response entity
+        return new ResponseEntity<>(apiException, forbidden);
     }
 }

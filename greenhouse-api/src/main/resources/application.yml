@@ -32,3 +32,9 @@ cloud:
     sqs:
       uri: ${AMAZON_SQS_URL}
       queue-name: ${QUEUE_NAME}
+
+jwt:
+  header: Authorization
+  secret: ${JWT_SECRET_KEY}
+  token:
+    expiration: 604800

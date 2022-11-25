@@ -20,7 +20,7 @@ services:
     depends_on:
       - mariadb
     ports:
-      - "8088:8088"
+      - "8080:8088"
     restart: unless-stopped
 
 volumes:
